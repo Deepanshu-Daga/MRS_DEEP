@@ -16,25 +16,25 @@ start = time.time()
 
 
 
+
+
+# now we want the movie image via the movie_id we saved from imdb
+# api fx
+def fetch_image_path(m_id):
+    import requests
+    url = "https://api.themoviedb.org/3/movie/{}".format(m_id)
+    headers = {
+        "accept": "application/json",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiNGE5MTYzYmI5ZjFlZDA1YjBlYWU5YWFhYWIzMGU0NCIsInN1YiI6IjYzZWI2ZDE0Njk5ZmI3MDA5NmFkMWQzMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.9JwBNZoA7S0sAmaAAaU7SBSgWgjrDyTkNee8L3XJkmc"
+    }
+    response = requests.get(url, headers=headers)
+    my_data = response.json()
+
+    # print(response.text)
+    return ('https://image.tmdb.org/t/p/original' + my_data['poster_path'])
+
+
 # From second run onwards Approach Two
-
-# # now we want the movie image via the movie_id we saved from imdb
-# # api fx
-# def fetch_image_path(m_id):
-#     import requests
-#     url = "https://api.themoviedb.org/3/movie/{}".format(m_id)
-#     headers = {
-#         "accept": "application/json",
-#         "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiNGE5MTYzYmI5ZjFlZDA1YjBlYWU5YWFhYWIzMGU0NCIsInN1YiI6IjYzZWI2ZDE0Njk5ZmI3MDA5NmFkMWQzMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.9JwBNZoA7S0sAmaAAaU7SBSgWgjrDyTkNee8L3XJkmc"
-#     }
-#     response = requests.get(url, headers=headers)
-#     my_data = response.json()
-
-#     # print(response.text)
-#     return ('https://image.tmdb.org/t/p/original' + my_data['poster_path'])
-
-
-
 # cosine_similarity_matrix = pickle.load(open('cosine_similarity_matrix.pkl','rb'))
 
 # # To create our recomendation fx we create a fx
