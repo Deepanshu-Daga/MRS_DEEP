@@ -141,6 +141,6 @@ with col5:
    st.text(r_movies[4])
    st.image(path[4])
 
-# st.snow()
-# end = time.time()
-# st.write((end - start) * (1000), "ms")
+st.snow()
+end = time.time()
+st.write((end - start) * (1000), "ms")
